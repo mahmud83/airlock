@@ -92,6 +92,9 @@
             @yield('content')
         </main>
     </div>
+    <div class="text-center">
+        <small class="text-muted">&copy; DinastiAirlock v1.0 shellrean</small>
+    </div>
     @yield('scripts')
 </body>
 </html>
