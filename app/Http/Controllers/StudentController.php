@@ -213,10 +213,10 @@ class StudentController extends Controller
 
         $file = $request->file('file');
         $nama_file = rand().$file->getClientOriginalName();
-        $file->move('file_student',$nama_file);
+        $path = $file->storeAs('public',$nama_file);
  
         try {
-            Excel::import(new StudentsImport, public_path('/file_student/'.$nama_file));
+            Excel::import(new StudentsImport, storage_path('app/'.$path));
         } catch (\Exception $e) {
             return redirect(route('students.upload'))
             ->with('error', $e->getMessage());

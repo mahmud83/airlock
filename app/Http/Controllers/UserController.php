@@ -141,10 +141,10 @@ class UserController extends Controller
 
         $file = $request->file('file');
         $nama_file = rand().$file->getClientOriginalName();
-        $file->move('file_user',$nama_file);
+        $path = $file->storeAs('public',$nama_file);
  
         try {
-            Excel::import(new UsersImport, public_path('/file_user/'.$nama_file));
+            Excel::import(new UsersImport, storage_path('app/'.$path));
         } catch (\Exception $e) {
             return redirect(route('users.upload'))
             ->with('error', $e->getMessage());

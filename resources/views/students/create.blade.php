@@ -65,6 +65,15 @@
                             @enderror
                         </div>
                         <div class="form-group">
+                            <label>Tanggal lahir</label>
+                            <input type="date" class="form-control form-control-sm @error('tanggal_lahir') is-invalid @enderror" placeholder="Tanggal Lahir" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" required="">
+                            @error('tanggal_lahir')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                        <div class="form-group">
                             <label>Jenis Kelamin</label>
                             <select class="form-control form-control-sm @error('jenis_kelamin') is-invalid @enderror" name="jenis_kelamin">
                                 <option value="L" {{ old('jenis_kelamin') == 'L' ? 'selected' : '' }}>Laki-Laki</option>

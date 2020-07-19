@@ -22,7 +22,7 @@ class StudentsImport implements ToModel, WithValidation, WithStartRow
             'nis'           => $row[2],
             'nama_lengkap' => $row[3],
             'tempat_lahir' => $row[4],
-            'tanggal_lahir' => $row[5],
+            'tanggal_lahir' => date('Y-m-d', strtotime($row[5])),
             'jenis_kelamin' => $row[6],
             'agama'     => $row[7],
             'anak_ke'   => $row[8],
