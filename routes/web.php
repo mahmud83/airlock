@@ -21,8 +21,6 @@ Auth::routes([
     'register' => false
 ]);
 
-
-
 Route::group(['middleware' => 'auth'], function() {
 
     Route::get('settings', 'SettingsController@index')->name('settings');
