@@ -59,7 +59,7 @@ class ApplicationController extends Controller
     public function show(Application $app)
     {
         $token = auth()->user()->createToken('Personal Access Token')->accessToken;
-        return redirect($app->url.'?token='.$token);
+        return redirect($app->url.'token='.$token);
     }
 
     /**
