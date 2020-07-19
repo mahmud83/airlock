@@ -36,4 +36,6 @@ Route::group(['middleware' => 'auth'], function() {
     Route::get('students/upload','StudentController@upload')->name('students.upload');
     Route::post('students/upload','StudentController@import')->name('students.import');
     Route::resource('students', 'StudentController');
+
+    Route::resource('apps', 'ApplicationController');
 });

@@ -48,6 +48,9 @@
                             Student</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ route('apps.index') }}">Apps</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ route('settings') }}">Oauth2 Setting</a>
                         </li>
                         @endif

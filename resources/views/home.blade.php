@@ -14,9 +14,11 @@
               <span class="list-group-item active">
                 Daftar aplikasi
               </span>
-              <a href="#" class="list-group-item list-group-item-action">
-                ExtraordinaryCBT
+              @foreach($datas as $data)
+              <a href="{{ route('apps.show', $data->id) }}" class="list-group-item list-group-item-action" target="_blank">
+                {{ $data->name }}
                 </a>
+                @endforeach
             </div>
         </div>
     </div>
